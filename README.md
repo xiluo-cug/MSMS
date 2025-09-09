@@ -1,3 +1,4 @@
+# Unsupervised Point Cloud Reconstruction via Recurrent Multi-step Moving Strategy
 ## Installation
 Our code is implemented in Python 3.8, PyTorch 1.11.0 and CUDA 11.3.
 - Install python Dependencies
@@ -94,13 +95,3 @@ python run.py --gpu 0 --conf confs/base.conf --dataname (dataname) --dir (datana
 ### Notice
 
 In different datasets or your own data, because of the variation in point cloud density, this hyperparameter [scale](https://github.com/junshengzhou/CAP-UDF/blob/eb22ffd4b3f34d4fa74e1863ece7ff37d63d03cc/models/dataset.py#L51) has a very strong influence on the final result, which controls the distance between the query points and the point cloud. So if you want to get better results, you should adjust this parameter. We give `0.25 * np.sqrt(POINT_NUM_GT / 20000)` here as a reference value, and this value can be used for most object-level reconstructions. 
-
-## Citation
-If you find our code or paper useful, please consider citing
-
-    @inproceedings{Zhou2022CAP-UDF,
-        title = {Learning Consistency-Aware Unsigned Distance Functions Progressively from Raw Point Clouds},
-        author = {Zhou, Junsheng and Ma, Baorui and Liu, Yu-Shen and Fang, Yi and Han, Zhizhong},
-        booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-        year = {2022}
-    }
